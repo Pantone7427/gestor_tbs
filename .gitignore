@@ -1,0 +1,30 @@
+# Entorno virtual
+venv/
+.env
+*.env
+
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos temporales o del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de logs o debug
+*.log
+debug_*.pdf
+
+# IDEs
+.vscode/
+.idea/
+
+# Salidas del programa
+/output/
+*.pdf
+
+# Archivos Excel de prueba
+*.xlsx
+*.xls
