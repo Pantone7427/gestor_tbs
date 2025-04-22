@@ -1,28 +1,37 @@
-# Procesador de TBs y Soportes de Pago
+# 🧾 Gestor de Transferencias Bancarias (TBs)
 
-Aplicación de escritorio en Python con PyQt5 que permite combinar archivos PDF de **Transferencias Bancarias (TBs)** con sus respectivos **soportes de pago**, utilizando información de un archivo Excel.
+Este script automatiza el emparejamiento de comprobantes de transferencias bancarias (TBs) con sus respectivos soportes, validando su correspondencia y estado ("ABONADO" o rechazado) a partir de un archivo Excel de control.
 
-## ✨ Funcionalidades
+## 🚀 Funcionalidades
 
-- Interfaz gráfica amigable con PyQt5.
-- Carga de archivos:
-  - PDF de TBs
-  - PDF con soportes de pago
-  - Archivo Excel con datos de egresos
-- División automática de soportes en tres regiones por página.
-- Verificación del contenido con OCR (`get_text`) para asegurarse que los soportes contengan la palabra "ABONADO".
-- Generación de PDFs individuales combinando TB + soporte, nombrados por número de egreso y beneficiario.
+- Empareja soportes con los TBs correspondientes, validando por nombre y valor.
+- Lee un archivo Excel para identificar la relación entre soportes y TBs.
+- Clasifica el estado de cada soporte: `ABONADO` o `RECHAZADO`.
+- Puede trabajar con soportes en formato PDF, PNG o JPG.
+- Exporta los resultados a un archivo final (por ejemplo, CSV o Excel).
 
-## 🛠️ Tecnologías usadas
+## 📁 Estructura de Archivos
+
+- `/soportes/`: Carpeta con los archivos de soporte (comprobantes de abono).
+- `/tbs/`: Carpeta con los archivos de TBs (transferencias).
+- `datos.xlsx`: Archivo de control con columnas como:
+  - `Nombre Propietario`
+  - `Valor`
+  - `Número de comprobante`
+  - `Estado` (ABONADO / otro)
+
+## 🛠️ Requisitos
 
 - Python 3.x
-- PyQt5
-- fitz / PyMuPDF
-- Pandas
+- Bibliotecas:
+  - `pandas`
+  - `openpyxl`
+  - `Pillow`
+  - `pdf2image`
+  - `pytesseract`
+  - `opencv-python`
 
-## 📦 Instalación
-
-1. Clona el repositorio:
+Puedes instalar los requerimientos con:
 
 ```bash
-git clone https://github.com/tuusuario/tu-repo.git
+pip install -r requirements.txt
